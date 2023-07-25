@@ -22,10 +22,6 @@
 
 
 	<style>
-		.error {
-			color: Red;
-		}
-
 		.button {
 			background-color: #628407;
 			/* Green */
@@ -38,6 +34,11 @@
 			font-size: 16px;
 			margin: 4px 2px;
 			cursor: pointer;
+		}
+
+
+		.setcolor {
+			color: red;
 		}
 	</style>
 
@@ -112,48 +113,48 @@
 								<div class="name_fileds">
 									<label id="test_name">First Name</label>
 									<input class="error" name="firstname" type="text" id="firstname" />
-									<div class="error" id='firstname_error'></div>
+
 
 								</div>
 								<div class="name_fileds">
 									<label>Last Name</label>
 									<input name="lastname" type="text" id="lastname" />
-									<span class="error" id='lastname_error'></span>
+
 								</div>
 							</li>
 							<li class="fileds">
 								<div class="phone_fileds">
 									<label>Phone No</label>
 									<input name="phone" type="text" id="phone" autocomplete="off">
-									<span class="error" id='phone_error'></span>
+
 								</div>
 								<div class="phone_fileds">
 									<label>Office No</label>
 									<input name="office" type="text" id="office">
-									<span class="error" id='office_error'></span>
+
 								</div>
 							</li>
 							<li class="fileds">
 								<div class="email_fileds">
 									<label>Email</label>
 									<input name="email" type="email" id="email">
-									<span class="error" id='email_error'></span>
+
 								</div>
 								<div class="pass_fileds">
 									<label>Password</label>
 									<input name="password" type="password" id="password">
-									<span class="error" id='password_error'></span>
-									<input type="checkbox" id="check"> Show Password
+
+
 								</div>
 							</li>
 							<li class="fileds">
 								<div class="pass_fileds">
 									<label>Confirm Password</label>
 									<input name="cpassword" type="password" id="cpassword" />
-									<span class="error" id='cpassword_error'></span>
+
 								</div>
 								<div class="dob_fileds selectbox">
-									<div class="dob_fileds selectbox" id="date">
+									<div class="dob_fileds selectbox" id="date" name="dob">
 										<label>My birthdate is</label>
 
 										<ul>
@@ -300,47 +301,66 @@
 													<option value="2021">2021</option>
 													<option value="2022">2022</option>
 													<option value="2023">2023</option>
+
 												</select>
 											</li>
 										</ul>
-										<div id='age_error'></div>
+
 									</div>
+								</div>
 							</li>
+
 							<li class="fileds">
 								<div class="age_fileds">
 									<label>Age</label>
-									<input type="text" name="textbox" id="age" readonly>
+									<input type="text" name="age" id="age" readonly>
+									<div>
+										<label class="error" name="age" for="age"></label>
+									</div>
 								</div>
 								<div class="gender_fileds">
+
 									<label>Gender</label>
 									<ul>
-										<li><input type="radio" class="radio" id="gender_male" name="radio"
+										<li><input type="radio" class="radio" id="gender_male" name="gender"
 												required /><label class="radio-label" for="gender_male">Male</label>
 										</li>
-										<li><input type="radio" class="radio" id="gender_female" name="radio"
+										<li><input type="radio" class="radio" id="gender_female" name="gender"
 												required /><label class="radio-label" for="gender_female">Female</label>
 										</li>
 									</ul>
-									<span class="error" id='radio_error'></span>
+									<div>
+										<label class="error" for="gender"></label>
+									</div>
+
 								</div>
+
 							</li>
 							<li>
 								<div class="interest_fileds">
 									<label>Interest</label>
 									<ul>
-										<li><input type="checkbox" class="checkbox" id="checkbox" name="checkbox" />
-											<label class="css-label" for="checkbox">Biking</label></li>
-										<li><input type="checkbox" class="checkbox" id="checkbox1" name="checkbox" />
-											<label class="css-label" for="checkbox1">Reading</label></li>
-										<li><input type="checkbox" class="checkbox" id="checkbox2" name="checkbox" />
-											<label class="css-label" for="checkbox2">Playing</label></li>
+										<li><input type="checkbox" class="checkbox" id="checkbox" name="check" />
+											<label class="css-label" for="checkbox">Biking</label>
+										</li>
+										<li><input type="checkbox" class="checkbox" id="checkbox1" name="check" />
+											<label class="css-label" for="checkbox1">Reading</label>
+										</li>
+										<li><input type="checkbox" class="checkbox" id="checkbox2" name="check" />
+											<label class="css-label" for="checkbox2">Playing</label>
+										</li>
 									</ul>
-									<span class="error" id='check_error'></span>
+									<div>
+										<label class="error" for="check"></label>
+									</div>
 								</div>
+
 								<div class="about_you_fileds">
 									<label>About you</label>
-									<textarea id="about" autocomplete="off"></textarea>
-									<span class="error" id='about_error'></span>
+									<textarea id="about" autocomplete="off" name="about"></textarea>
+									<div>
+										<label class="error" for="about"></label>
+									</div>
 								</div>
 							</li>
 						</ul>
@@ -520,7 +540,7 @@
 	<!-- bxSlider Javascript file -->
 	<!-- <script src="jquery.bxslider.min.js"></script> -->
 	<!-- <script src="script.js"></script> -->
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="validation_new.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -534,6 +554,18 @@
 			});
 		});
 	</script>
+
+
+
+	<style>
+		.form_container_block .error {
+			color: red;
+			font-size: small;
+			font-weight: 60;
+
+
+		}
+	</style>
 
 </body>
 
